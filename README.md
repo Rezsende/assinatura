@@ -28,4 +28,4 @@ Esta é uma API REST desenvolvida com **Spring Boot**, utilizando **PostgreSQL**
 
 4. Acesse a API:
 
-- http://localhost:8080/usuario/Lista
+- http://localhost:8080/usuario
