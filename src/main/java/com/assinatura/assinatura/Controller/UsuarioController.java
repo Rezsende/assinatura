@@ -1,15 +1,26 @@
 package com.assinatura.assinatura.Controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.assinatura.assinatura.Model.Usuario;
+import com.assinatura.assinatura.Service.UsuarioService;
 
 @RestController
 @RequestMapping(value = "/usuario")
 public class UsuarioController {
 
+    @Autowired
+    private UsuarioService service;
+
     @GetMapping("/Lista")
-    public String TodosUsuarios() {
-        return "Lista";
+    public ResponseEntity<List<Usuario>> findAll() {
+        List<Usuario> list = service.findAll();
+        return ResponseEntity.ok().body(list);
     }
 }

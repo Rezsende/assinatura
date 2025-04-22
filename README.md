@@ -14,17 +14,18 @@ Esta é uma API REST desenvolvida com **Spring Boot**, utilizando **PostgreSQL**
 ### 🛠️ Passo a passo
 
 1. Clone o repositório:
-   git clone https://github.com/Rezsende/assinatura.git
-   cd seu-repositorio
+
+   - git clone https://github.com/Rezsende/assinatura.git
+   - cd seu-repositorio
 
 2. Execute o comando docker
 
-docker-compose up -d
+   - docker-compose up -d
 
 3. Execute a aplicação Spring Boot:
 
-./mvnw spring-boot:run
+   - ./mvnw spring-boot:run
 
 4. Acesse a API:
 
-http://localhost:8080/usuario/Lista
+- http://localhost:8080/usuario/Lista
