@@ -27,4 +27,10 @@ public class UsuarioService {
     public Usuario save(Usuario usuario) {
         return repository.save(usuario);
     }
+
+    public void delete(Long id) {
+        Usuario usuario = findById(id); // já verifica se existe
+        repository.delete(usuario);
+    }
+
 }
