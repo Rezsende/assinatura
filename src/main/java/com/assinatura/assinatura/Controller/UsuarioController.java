@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/usuario")
 public class UsuarioController {
 
-    @GetMapping("/ola")
-    public String olaMundo() {
-        return "Olá, mundo!";
+    @GetMapping("/Lista")
+    public String TodosUsuarios() {
+        return "Lista";
     }
 }
