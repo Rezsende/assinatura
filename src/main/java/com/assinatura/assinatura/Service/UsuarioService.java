@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.assinatura.assinatura.Model.Usuario;
 import com.assinatura.assinatura.Repository.UsuarioRepository;
+import com.assinatura.assinatura.records.UsuarioRecord;
 
 @Service
 public class UsuarioService {
@@ -24,8 +25,15 @@ public class UsuarioService {
         return obj.get();
     }
 
-    public Usuario save(Usuario usuario) {
-        return repository.save(usuario);
+    public Usuario save(UsuarioRecord usuario) {
+
+        Usuario novoUsuario = new Usuario();
+        novoUsuario.setNome(usuario.nome());
+        novoUsuario.setEmail(usuario.email());
+        novoUsuario.setSenha(usuario.senha());
+        novoUsuario.setTelefone(usuario.telefone());
+
+        return repository.save(novoUsuario);
     }
 
     public void delete(Long id) {
