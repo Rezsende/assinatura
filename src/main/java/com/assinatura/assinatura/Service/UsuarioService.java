@@ -29,7 +29,7 @@ public class UsuarioService {
     }
 
     public void delete(Long id) {
-        Usuario usuario = findById(id); // já verifica se existe
+        Usuario usuario = findById(id);
         repository.delete(usuario);
     }
 
