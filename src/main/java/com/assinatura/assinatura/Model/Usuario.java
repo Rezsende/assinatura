@@ -27,8 +27,8 @@ public class Usuario {
     private String senha;
     private String telefone;
 
-    @ManyToOne
-    @JoinColumn(name = "plano_id")
-    private Plano plano;
+//    @ManyToOne
+//    @JoinColumn(name = "plano_id")
+//    private Plano plano;
 
 }
