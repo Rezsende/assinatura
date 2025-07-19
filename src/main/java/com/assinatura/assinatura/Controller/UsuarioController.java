@@ -1,10 +1,9 @@
 package com.assinatura.assinatura.Controller;
 import com.assinatura.assinatura.Repository.UsuarioRepository;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.assinatura.assinatura.Model.Usuario;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/usuario")
@@ -19,5 +18,9 @@ public class UsuarioController {
     public Usuario createUsuario(@RequestBody Usuario usuario) {
        usuarioRepository.save(usuario);
        return  usuario;
+    }
+    @GetMapping("/{id}")
+    public  Usuario searchById(@PathVariable("id") Long id){
+       return  usuarioRepository.findById(id).orElseThrow(() -> new RuntimeException("Usuário não encontrado com ID: " + id));
     }
 }
