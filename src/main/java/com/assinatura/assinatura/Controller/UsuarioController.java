@@ -19,8 +19,17 @@ public class UsuarioController {
        usuarioRepository.save(usuario);
        return  usuario;
     }
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public  Usuario searchById(@PathVariable("id") Long id){
        return  usuarioRepository.findById(id).orElseThrow(() -> new RuntimeException("Usuário não encontrado com ID: " + id));
+    }
+    @DeleteMapping("{id}")
+    public  void deleteUser(@PathVariable("id") Long id){
+        usuarioRepository.deleteById(id);
+    }
+    @PutMapping("{id}")
+    public  void updateUser(@PathVariable("id") Long id, @RequestBody Usuario usuario){
+        usuario.setId(id);
+        usuarioRepository.save(usuario);
     }
 }

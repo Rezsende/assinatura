@@ -23,6 +23,10 @@ public class Usuario {
     private String telefone;
 
 //    @ManyToOne
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 //    @JoinColumn(name = "plano_id")
 //    private Plano plano;
 
