@@ -3,6 +3,7 @@ import com.assinatura.assinatura.Repository.UsuarioRepository;
 import org.springframework.web.bind.annotation.*;
 import com.assinatura.assinatura.Model.Usuario;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -32,4 +33,8 @@ public class UsuarioController {
         usuario.setId(id);
         usuarioRepository.save(usuario);
     }
+    @GetMapping
+    public List<Usuario> search(@RequestParam("nome") String nome){
+        return usuarioRepository.findByNome(nome);
+       }
 }
